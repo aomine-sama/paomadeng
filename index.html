@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link type="text/css" rel="stylesheet" href="css/cssreset.css" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+	<div id="index-bg">
+    <div id="cloud-1" class="float-cloud"></div>
+    <div id="cloud-2" class="float-cloud"></div>
+    <div id="cloud-3" class="float-cloud"></div>
+    <div id="cloud-4" class="float-cloud"></div>
+    <div id="cloud-5" class="float-cloud"></div>
+    <div id="cloud-6" class="float-cloud"></div>
+    <div id="ballon"></div>
+		<img id="index-sun" src="img/index_sun.png">
+	</div>
+<!-- 	<div id="test"></div>
+	<div id="test2"></div> -->
+</body>
+
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<!-- <script type="text/javascript" src="js/octjs.js"></script> -->
+<script type="text/javascript" src="js/laker.js"></script>
+<script type="text/javascript">
+  // var a = Sizzle("#test").style.width = "500px";
+/*  var a = $.get("test").map();
+  console.log(a);*/
+  // $("text").map("aaa");
+/*  var b = document.getElementById("test2");
+  b.style.width = "500px";
+  // console.log(b);*/
+  floatCloud("#cloud-1", "left", 30, 300, 4000, 8000);
+  floatCloud("#cloud-2", "left", 200, 500, 8000, 16000);
+  floatCloud("#cloud-3", "right", 220, 300, 3000, 6000);
+  floatCloud("#cloud-4", "right", 20, 400, 6000, 12000);
+  // floatCloud("#cloud-5", "left", 30, 200, 4000, 10000);
+  // floatCloud("#cloud-6", "left", 30, 200, 4000, 10000);
+
+</script>
+</html>

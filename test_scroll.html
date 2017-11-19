@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link type="text/css" rel="stylesheet" href="css/cssreset.css" />
+<link type="text/css" rel="stylesheet" href="css/scroll.css" />
+</head>
+
+<body>
+	<style type="text/css">
+	</style>
+
+<!-- 	<div id="header-nav">
+		<ul>
+			<li><a href=""><img src="img/header_nav_1cd.png" alt=""></a></li>
+			<li><img src="img/header_nav_line_1.png" alt=""></li>
+			<li><a href="#city-bj"><img src="img/header_nav_2bj.png" alt=""></a></li>
+			<li><a href=""><img src="img/header_nav_title.png" alt=""></a></li>
+			<li><a href=""><img src="img/header_nav_3sh.png" alt=""></a></li>
+			<li><img src="img/header_nav_line_2.png" alt=""></li>
+			<li><a href=""><img src="img/header_nav_4gz.png" alt=""></a></li>
+		</ul>
+	</div> -->
+
+	<div id="container">
+		<ul id="block-outer">
+
+			<li id="block-index" class="bg">
+				<div id="index-surr" class="surr"></div>
+				<div id="index-stuffs" class="stuffs">
+					<div id="cloud-01" class="cloud-nomal cloud-01"></div>
+					<div id="cloud-02" class="cloud-nomal cloud-02"></div>
+					<div id="cloud-03" class="cloud-nomal cloud-03"></div>
+					<div id="cloud-04" class="cloud-nomal cloud-04"></div>
+					<div id="index-ballon"></div>
+					<img id="index-sun" src="img/index_sun.png">					
+				</div>
+			</li>
+
+			<li id="block-cd">
+				<div id="cd-surr" class="surr surr-left">
+					<div id="cd-mahjong" class="animate-styffs"></div>
+				</div>
+				<div id="cd-stuffs" class="stuffs stuffs-left">
+					<div class="clouds-rainy cloud-07"></div>
+					<div class="clouds-rainy cloud-08"></div>
+					<div class="clouds-rainy cloud-09"></div>
+				</div>
+				<div id="cd-stuffs-2" class="stuffs stuffs-left">
+					<div class="cloud-nomal cloud-10"></div>
+					<div class="cloud-nomal cloud-11"></div>
+					<div class="cloud-nomal cloud-12"></div>
+					<div class="cloud-nomal cloud-13"></div>
+				</div>
+			</li>
+
+			<li id="block-bj">
+				<div id="bj-surr" class="surr surr-left">
+					<div id="bj-flag" class="animate-styffs"></div>
+					<div id="bj-girl" class="animate-styffs"></div>
+					<div id="bj-mom" class="animate-styffs"></div>
+					<div id="bj-boy" class="animate-styffs"></div>
+				</div>
+				<div id="bj-stuffs" class="stuffs stuffs-left">
+					<div id="" class="cloud-nomal cloud-14"></div>
+					<div id="" class="cloud-nomal cloud-15"></div>
+					<div id="" class="cloud-nomal cloud-16"></div>
+				</div>
+				<div id="bj-stuffs-2" class="stuffs stuffs-left">
+					<div class="cloud-nomal cloud-10"></div>
+					<div class="cloud-nomal cloud-11"></div>
+					<div class="cloud-nomal cloud-12"></div>
+					<!-- <div class="cloud-nomal cloud-13"></div> -->
+				</div>
+			</li>
+
+			<li id="block-sh">
+				<div id="sh-surr" class="surr surr-left"></div>
+				<div id="sh-stuffs" class="stuffs stuffs-left">
+					<div class="cloud-nomal cloud-14"></div>
+					<div class="cloud-nomal cloud-15"></div>
+					<div class="cloud-nomal cloud-03"></div>
+					<div class="cloud-nomal cloud-04"></div>
+					<!-- 再做一辆车来对比速度才有视觉差的感觉 -->
+					<!-- <div id="sh-car"></div> -->
+				</div>
+			</li>
+
+			<li id="block-gz">
+				<div id="gz-surr" class="surr surr-left"></div>
+				<div id="gz-stuffs" class="stuffs stuffs-left">
+					<div class="cloud-yellow cloud-17 cloud-pisition-30"></div>
+					<div class="cloud-yellow cloud-18 cloud-pisition-31"></div>
+					<div class="cloud-yellow cloud-19 cloud-pisition-32"></div>
+					<div class="cloud-yellow cloud-20 cloud-pisition-33"></div>
+				</div>
+			</li>
+
+		</ul>
+	</div>
+
+<!-- 	<div id="container">
+
+		<ul id="block-bg" class="block-outer">
+			<li>aaaaaaaaaaaaaaaaaaa</li>
+			<li>bbbbbbbbbbbbbbbbbbbb</li>
+			<li id="city-bj">ccccccccccccccccccc</li>
+			<li>ddddddddddddddddddd</li>
+			<li>eeeeeeeeeeeeeeeeeeee</li>
+		</ul>
+
+		<ul id="block-surr" class="block-outer">
+			<li>111111111111111111111</li>
+			<li>22222222222222222222222</li>
+			<li id="city-bj">3333333333333333333333333333</li>
+			<li>44444444444444444444444444</li>
+			<li>5555555555555555555555555</li>
+		</ul> -->
+
+	</div>
+
+</body>
+<!-- <script type="text/javascript" src="js/jquery-1.7.min.js"></script> -->
+<script type="text/javascript">
+	
+/*	$(window).scroll(function () {
+	  $("span").css("display", "inline").fadeOut("slow");
+	});*/
+
+window.onload = function() {
+
+	init();
+
+	document.body.onmousewheel = function(event) {
+
+	  /* 备注: console.dir(event); 用来看此event各值 */
+	  event = event || window.event;
+
+	  /* wheelDelta=120为手指往上滚；当_count为0时页面在首页，禁止往前浏览 */
+	  if(event.wheelDelta > 0 && _count > 0) {
+	  	_count--;
+	  }
+
+	  /* wheelDelta=-120为手指往下滚；110时滚玩所有页面禁止再往后滚 */
+	  if(event.wheelDelta < 0  && _count < 111) {
+	  	_count++;
+	  }
+
+		console.log(_count);
+/*	  parallaxScroll($("#block-bg"), 120);
+	  parallaxScroll($("#block-surr"), 80);*/
+
+/*	  parallaxScroll($("#block-outer"), 20, 0, 70);
+
+	  var a = $(".surr");
+	  for(var i = 0; i < a.length; i++) {
+	  	parallaxScroll(a[i], 20.5);
+	  }*/
+
+
+	  parallaxScroll2($("#block-outer"), 50, 0, 111);
+
+	  //  屏幕 除以 速度 = 走完一屏滚动次数
+	  //  假设屏幕1366px，速度50.5px，故滚轮次数=27
+	  //  0 + 27 = 27 为了保险起见（比如更宽的屏幕）多设5，得32
+	  parallaxScroll2($("#index-surr"), 50.5, 0, 33);
+	  //  为方便计算把27看为28，28/2=14，14*50=700
+	  parallaxScroll2($("#cd-surr"), 50.5, 14, 47);
+	  parallaxScroll2($("#bj-surr"), 50.5, 42, 75);
+	  parallaxScroll2($("#sh-surr"), 50.5, 70, 103);
+	  parallaxScroll2($("#gz-surr"), 50.5, 98, 111);
+
+	  parallaxScroll2($("#cd-stuffs"), 40, 14, 47);
+	  parallaxScroll2($("#cd-stuffs-2"), 80, 14, 47);
+
+	  parallaxScroll2($("#bj-stuffs"), 40, 42, 75);
+	  parallaxScroll2($("#bj-stuffs-2"), 80, 42, 75);
+
+	  parallaxScroll2($("#sh-stuffs"), 90, 70, 103);
+
+	  parallaxScroll2($("#gz-stuffs"), 90, 98, 111);
+
+	};
+
+/*	var ss = "-32.64px";
+	var ns = ss.slice(0, -2);*/
+	// var ns = ss.match(/-\d+\d./).join("");
+	// var ns = ss.match(/-\d+\d./).join("").split(".")[0].join("");
+
+
+	// var x = aa("44");
+	
+/*	var interval_500 = setInterval(
+		function() {
+			actAnimate("#cd-mahjong", "vertical", 1200, 5);
+			actAnimate("#bj-mom", "vertical", 2050, 10);
+		}, 500
+	);*/
+
+/*	var interval_150 = setInterval(
+		function() {
+			actAnimate("#bj-flag", "vertical", 2820, 6);
+		}, 150
+	);*/
+
+/*	var interval_200 = setInterval(
+		function() {
+			actAnimate("#bj-girl", "vertical", 540, 4);
+		}, 200
+	);*/
+
+	var interval_200 = setInterval(
+		function() {
+			actAnimate("#bj-boy", "vertical", 2100, 14);
+		}, 200
+	);
+	
+	/*var objX = window.getComputedStyle(obj, null).backgroundPosition.split(' ')[0];
+	console.log(objX);
+	console.log(objY);
+	console.dir(obj);*/
+/*	var qq = document.getElementById("cd-mahjong");
+	qq.style.backgroundPosition = "0px" + " " + "50px";*/
+	// console.log("message");
+
+}
+
+
+
+	var _count = 0; //记录滚轮值
+
+	var $ = function (obj) {
+		var symbol = obj.slice(0,1);
+		switch(symbol) {
+			case "#":
+    		return document.getElementById(obj.slice(1));
+				break;
+			case ".":
+				return document.getElementsByClassName(obj.slice(1));
+				break;
+		}
+	};
+
+	/* direction为sprite图片的方向，分vertical和horizontal。length指代width和height，若为图片是横向的则用width, 纵向用height。使用动画的元素还要定义background-position: 0 0;不能省略也不能用class统一定义，必须紧跟图片的定义 */
+	var actAnimate = function(id, direction, length, n) {
+		var i = 0;
+		// var increase = 239;
+
+		var increase = length / n;
+		var new_bg_posi_x, new_bg_posi_y;/*
+		var bg_posi_x = window.getComputedStyle($(id), null).backgroundPosition.split(" ")[0];
+		var bg_posi_y = window.getComputedStyle($(id), null).backgroundPosition.split(" ")[0];
+		bg_posi_x = bg_posi_x.match(/\d/g).join("");
+		bg_posi_y = bg_posi_y.match(/\d/g).join("");
+		bg_posi_x = parseInt(bg_posi_x);
+		bg_posi_y = parseInt(bg_posi_y);
+		new_bg_posi_x = bg_posi_x + increase + "px";
+		new_bg_posi_y = bg_posi_y + increase + "px";
+
+
+		$(id).style.backgroundPosition = new_bg_posi_x + new_bg_posi_y;*/
+
+		if(direction === "vertical") {
+			/* 垂直的sprite图片，backgroundPosition的X总为0 */
+			var bg_posi_x = "0px";
+			var bg_posi_y = window.getComputedStyle($(id), null).backgroundPosition.split(" ")[1];
+
+			/* 例如得到 “-236.5423px”，下面就截取px前面的值，有空改为正则 */
+			bg_posi_y = bg_posi_y.slice(0, -2);
+
+			/* 注意不要用paeseInt */
+			bg_posi_y = parseFloat(bg_posi_y);
+
+			/* backgroundPosition的目前指bg_posi_y与增长值的和 大于图片总高度时，表明当前已经是最后一张图了，下次要重0开始。+1 是为了避免因小数计算导致值偏小而实际已经是在最后一张图了 */
+			if(Math.abs(bg_posi_y) + increase + 1 >= length) {
+				bg_posi_y = 0;
+			}
+
+			/* 更改positiond的值 */
+			new_bg_posi_y = bg_posi_y - increase;
+
+			/* backgroundPosition的值必须带"px" */
+			new_bg_posi_y = new_bg_posi_y + "px";
+
+			/* 合成时注意要有空格间隔开两个值。可以log一下$(id).style.backgroundPosition 的值是"5px 5px"的形式  */
+			$(id).style.backgroundPosition = "0px" + " " + new_bg_posi_y;
+		}
+
+		if(direction === "horizontal") {
+			var bg_posi_x = window.getComputedStyle($(id), null).backgroundPosition.split(" ")[0];
+			bg_posi_x = bg_posi_x.slice(0, -2);
+			bg_posi_x = parseFloat(bg_posi_x);
+				if(Math.abs(bg_posi_x) + increase + 1 >= length) {
+					bg_posi_x = 0;
+				}
+				new_bg_posi_x = bg_posi_x - increase;
+				new_bg_posi_x = new_bg_posi_x + "px";
+				$(id).style.backgroundPosition = new_bg_posi_x + " " + "0px";
+		}
+
+	}
+
+	var init = function() {
+
+		var win_width, win_height;
+		if(self.innerHeight) { // all except Explorer
+		  win_width = self.innerWidth;
+		  win_height = self.innerHeight;
+		} else if(document.documentElement && document.documentElement.clientHeight) { // Explorer 6 Strict Mode
+		  win_width = document.documentElement.clientWidth;
+		  win_height = document.documentElement.clientHeight;
+		} else if(document.body) { // other Explorers
+		  win_width = document.body.clientWidth;
+		  win_height = document.body.clientHeight;
+		}/*
+		console.log(win_width);
+		console.log(win_height);*/
+/*
+		$("#test").style.width = win_width + "px";
+		$("#test").style.height = win_height + "px";*/
+
+		/*console.log(win_width);
+		console.log(win_height);*//*
+		$("#container").style.width = win_width;
+		$("#container").style.height = win_height;*/
+		var block_outer = $(".block-outer").length;
+		var a = win_width * block_outer;
+/*		$("#block-bg").style.width = 6840 + "px";
+		$("#block-bg").style.height = 0 + "px"; *///必须要设为0
+/*		console.log($(".block-outer"));
+		console.log($("#block-bg").style.width);
+		console.log($("#city-bj").style.width);
+		console.log(win_height);*/
+	}
+
+	/* 根据对象、速度进行滚动 */
+	var parallaxScroll = function(obj, speed) {
+		// console.log(curr_marleft);
+		var distance = - speed * _count;
+	  obj.style.marginLeft = distance + "px";
+	}
+
+	var parallaxScroll2 = function(obj, speed, lower_limit, upper_limit) {
+		if(lower_limit > _count || _count > upper_limit) {
+			return false;
+		}
+		if(lower_limit <= _count <= upper_limit) {
+			var distance = - speed * ( _count - lower_limit );
+		  obj.style.marginLeft = distance + "px";
+		}
+	}
+
+	var parallaxScroll3 = function(obj, speed, lower_limit, upper_limit) {
+		if(lower_limit > _count || _count > upper_limit) {
+			obj.style.display = "none";
+			console.log("bbb");
+			return false;
+		}
+		if(lower_limit <= _count <= upper_limit) {
+			obj.style.display = "block";
+			var curr_marleft = obj.style.marginLeft;
+			// console.log(curr_marleft);
+			var distance = - speed * ( _count - lower_limit );
+			var new_marleft = curr_marleft - distance;
+		  obj.style.marginLeft = distance + "px";
+		}
+	}
+
+
+
+/*	var parallaxScroll = function(obj, speed, limit) {
+		console.log(_count);
+		if(lower_limit <= _count <= uper_limit) {
+			obj.style.display = "block";
+			var curr_marleft = obj.style.marginLeft;
+			// console.log(curr_marleft);
+			var distance = - speed * _count;
+			var new_marleft = curr_marleft - distance
+		  obj.style.marginLeft = distance + "px";
+		}
+		if(lower_limit > _count || _count > uper_limit) {
+			obj.style.display = "none";
+		}
+	}*/
+
+
+</script>
+</html>
